@@ -1,4 +1,7 @@
 @value makerWheat from './common/colors.css';
+* {
+  box-sizing: border-box;
+}
 .app {
   display: flex;
   width: 100vw;

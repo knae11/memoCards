@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 0.5em 0;
+}
+.input,
+.textarea {
+  flex-basis: 100%;
+}
+.sub {
+  flex: 1 1 30%;
+}
+.button {
+  flex: 1 1 50%;
+}

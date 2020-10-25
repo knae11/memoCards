@@ -21,8 +21,13 @@
 - routing
 - OAuth 연결
 - DI
+- form
 
 ## 배운 점
 
 - css @keyframes
+- react에서 common으로 css 값 관리하기
+- css flex-box 이해도 증가
 - event.currentTarget.textcontent ==> element 내역확인
+- Object와 배열로써의 상태관리
+- Object 메서드
