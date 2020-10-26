@@ -37,3 +37,6 @@
 - useHistory action 사용에 관해 더 알아보기, location??
 - useEffect의 의존성 배열에 값은 대다수의 경우에 넣어주자... 무한 반복호출된다(자원낭비)
 - return 값으로의 callback함수
+- 왜 input section 에서는 overflow-y : auto 적용이 안되는지?
+- object접근 [mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Working_with_Objects)
+- min-height? 아직 의문..?

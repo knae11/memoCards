@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./button.module.css";
-const Button = ({ name, onSubmit }) => (
+const Button = memo(({ name, onSubmit }) => (
   <button className={styles.button} onClick={onSubmit}>
     {name}
   </button>
-);
+));
 
 export default Button;

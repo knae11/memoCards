@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import CardInput from "../cardInput/cardInput";
 import CardPreview from "../cardPreview/cardPreview";
@@ -12,9 +12,9 @@ const Main = ({ authService, ImageFileInput, cardRepository }) => {
   const [cards, setCards] = useState({});
 
   const [userId, setUserId] = useState(historyState && historyState.id);
-  const onLogout = () => {
+  const onLogout = useCallback(() => {
     authService.logout();
-  };
+  }, [authService]);
 
   useEffect(() => {
     if (!userId) return;

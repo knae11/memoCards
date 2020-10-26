@@ -1,5 +1,6 @@
 .cardPreview {
   flex-basis: 50%;
+  overflow-y: auto;
 }
 .title {
   text-align: center;

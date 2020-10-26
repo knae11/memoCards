@@ -12,7 +12,7 @@ const CardInput = ({
 }) => {
   return (
     <section className={styles.cardInput}>
-      <h1 className={styles.title}>CardInput</h1>
+      <h1 className={styles.title}>Reviews</h1>
       <ul className={styles.ul}>
         {cards &&
           Object.keys(cards).map((key) => (

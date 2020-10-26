@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { memo, useRef, useState } from "react";
 import styles from "./imageButton.module.css";
-const ImageButton = ({ imageUploader, name, onFileChange }) => {
+const ImageButton = memo(({ imageUploader, name, onFileChange }) => {
   const [loading, setLoading] = useState(false);
   const inputImageRef = useRef();
   const onClickImageUpload = () => {
@@ -35,6 +35,6 @@ const ImageButton = ({ imageUploader, name, onFileChange }) => {
       {loading && <div className={styles.spinner}></div>}
     </div>
   );
-};
+});
 
 export default ImageButton;

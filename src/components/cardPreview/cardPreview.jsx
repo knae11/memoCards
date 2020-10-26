@@ -5,7 +5,7 @@ import styles from "./cardPreview.module.css";
 const CardPreview = ({ cards }) => {
   return (
     <section className={styles.cardPreview}>
-      <h1 className={styles.title}>CardPreview</h1>
+      <h1 className={styles.title}>Cards</h1>
       <ul className={styles.ul}>
         {cards &&
           Object.keys(cards).map((key) => <Card key={key} card={cards[key]} />)}

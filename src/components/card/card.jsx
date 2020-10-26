@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./card.module.css";
 
 const DEFAULT_IMAGE = "./images/white.jpg";
-const Card = ({ card }) => {
+const Card = memo(({ card }) => {
   const { title, label, date, location, content, imageURL } = card;
   const url = imageURL || DEFAULT_IMAGE;
   console.log(url);
@@ -18,7 +18,7 @@ const Card = ({ card }) => {
       </div>
     </li>
   );
-};
+});
 
 function display(label) {
   switch (label) {
