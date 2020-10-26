@@ -1,17 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import CardInput from "../cardInput/cardInput";
 import CardPreview from "../cardPreview/cardPreview";
 import Footer from "../footer/footer";
 import Header from "../header/header";
 import styles from "./main.module.css";
-const Main = ({ authService, ImageFileInput }) => {
+const Main = ({ authService, ImageFileInput, cardRepository }) => {
   const history = useHistory();
+  const historyState = history.location.state;
+
+  const [cards, setCards] = useState({});
+
+  const [userId, setUserId] = useState(historyState && historyState.id);
   const onLogout = () => {
     authService.logout();
-    history.push("/");
   };
-  const [cards, setCards] = useState({});
+
+  useEffect(() => {
+    if (!userId) return;
+    const stopSync = cardRepository.syncCard(userId, (dbcards) =>
+      setCards(dbcards)
+    );
+    console.log(stopSync);
+    return () => stopSync();
+  }, [userId, cardRepository]);
+
+  useEffect(() => {
+    authService.onAuthChanged((user) => {
+      if (user) {
+        setUserId(user.uid);
+        console.log(user);
+      } else {
+        history.push("/");
+      }
+    });
+  }, [userId, history, authService]);
 
   const addOrUpdateCard = (card) => {
     setCards((cards) => {
@@ -19,6 +42,7 @@ const Main = ({ authService, ImageFileInput }) => {
       updated[card.id] = card;
       return updated;
     });
+    cardRepository.saveCard(userId, card);
   };
 
   const deleteCard = (card) => {
@@ -27,6 +51,7 @@ const Main = ({ authService, ImageFileInput }) => {
       delete updated[card.id];
       return updated;
     });
+    cardRepository.removeCard(userId, card);
   };
 
   return (

@@ -1,11 +1,14 @@
 import React from "react";
 import styles from "./card.module.css";
+
+const DEFAULT_IMAGE = "./images/white.jpg";
 const Card = ({ card }) => {
   const { title, label, date, location, content, imageURL } = card;
-
+  const url = imageURL || DEFAULT_IMAGE;
+  console.log(url);
   return (
     <li className={`${styles.card} ${display(label)}`}>
-      <img src={imageURL} alt="poster" className={styles.image} />
+      <img src={url} alt="poster" className={styles.image} />
       <div className={styles.info}>
         <h1 className={styles.title}>{title}</h1>
         <span className={styles.label}>{label}</span>

@@ -34,3 +34,6 @@
 - 연산자 [mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators)
 - element.click() [mdn](https://developer.mozilla.org/ko/docs/Web/API/HTMLElement)
 - 왜 props로 컴포넌트 함수를 전달할때는 codeblock 사용이 안되는 거지?? 의문 --> 코드블럭을 사용하려면 리턴값으로 해줘야됨
+- useHistory action 사용에 관해 더 알아보기, location??
+- useEffect의 의존성 배열에 값은 대다수의 경우에 넣어주자... 무한 반복호출된다(자원낭비)
+- return 값으로의 callback함수

@@ -14,15 +14,16 @@ const CardInput = ({
     <section className={styles.cardInput}>
       <h1 className={styles.title}>CardInput</h1>
       <ul className={styles.ul}>
-        {Object.keys(cards).map((key) => (
-          <CardEditForm
-            key={key}
-            ImageFileInput={ImageFileInput}
-            card={cards[key]}
-            updateCard={updateCard}
-            deleteCard={deleteCard}
-          />
-        ))}
+        {cards &&
+          Object.keys(cards).map((key) => (
+            <CardEditForm
+              key={key}
+              ImageFileInput={ImageFileInput}
+              card={cards[key]}
+              updateCard={updateCard}
+              deleteCard={deleteCard}
+            />
+          ))}
         <CardAddForm ImageFileInput={ImageFileInput} onAdd={onAdd} />
       </ul>
     </section>
