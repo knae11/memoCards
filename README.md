@@ -31,3 +31,6 @@
 - event.currentTarget.textcontent ==> element 내역확인
 - Object와 배열로써의 상태관리
 - Object 메서드
+- 연산자 [mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators)
+- element.click() [mdn](https://developer.mozilla.org/ko/docs/Web/API/HTMLElement)
+- 왜 props로 컴포넌트 함수를 전달할때는 codeblock 사용이 안되는 거지?? 의문 --> 코드블럭을 사용하려면 리턴값으로 해줘야됨

@@ -1,7 +1,12 @@
 import React from "react";
+import Button from "../button/button";
+import ImageButton from "../imageButton/imageButton";
 import styles from "./cardEditForm.module.css";
-const CardEditForm = ({ card, updateCard, deleteCard }) => {
-  const { title, label, date, location, content } = card;
+const CardEditForm = ({ ImageFileInput, card, updateCard, deleteCard }) => {
+  const { title, label, date, location, content, imageName } = card;
+  const onFileChange = (file) => {
+    updateCard({ ...card, imageName: file.name, imageURL: file.url });
+  };
   const handleChange = (e) => {
     if (e.currentTarget === null) return;
     e.preventDefault();
@@ -9,7 +14,7 @@ const CardEditForm = ({ card, updateCard, deleteCard }) => {
     updateCard({ ...card, [e.currentTarget.name]: value });
   };
 
-  const handleDelete = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
     deleteCard(card);
   };
@@ -53,10 +58,10 @@ const CardEditForm = ({ card, updateCard, deleteCard }) => {
         value={content}
         onChange={handleChange}
       ></textarea>
-      <button className={styles.button}>Upload</button>
-      <button className={styles.button} onClick={handleDelete}>
-        Delete
-      </button>
+      <div className={styles.button}>
+        <ImageFileInput name={imageName} onFileChange={onFileChange} />
+      </div>
+      <Button name="Delete" onSubmit={onSubmit} />
     </form>
   );
 };

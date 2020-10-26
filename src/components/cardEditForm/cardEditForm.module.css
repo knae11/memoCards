@@ -2,8 +2,7 @@
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-
-  padding: 0.5em 0;
+  padding-bottom: 1em;
 }
 .input,
 .textarea {
@@ -14,4 +13,11 @@
 }
 .button {
   flex: 1 1 50%;
+}
+
+.input {
+  min-height: 2.5em;
+}
+.textarea {
+  min-height: 5em;
 }

@@ -14,3 +14,9 @@
 .button {
   flex: 1 1 50%;
 }
+.input {
+  min-height: 2.5em;
+}
+.textarea {
+  min-height: 5em;
+}

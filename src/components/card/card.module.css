@@ -3,7 +3,6 @@
 .card {
   list-style: none;
   display: flex;
-  background-color: makerWheat;
   width: 100%;
   margin: 0.5em;
   padding: 0.2em 0;
@@ -11,7 +10,16 @@
   box-shadow: 6px 6px 8px 0px makerShadow;
   max-width: 40rem;
 }
-
+.card.movie {
+  background-color: makerBlack;
+  color: makerWhite;
+}
+.card.book {
+  background-color: makerWheat;
+}
+.card.exhibition {
+  background: makerColorful;
+}
 .image {
   width: 10em;
   height: 14em;

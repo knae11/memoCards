@@ -5,7 +5,7 @@ import CardPreview from "../cardPreview/cardPreview";
 import Footer from "../footer/footer";
 import Header from "../header/header";
 import styles from "./main.module.css";
-const Main = ({ authService }) => {
+const Main = ({ authService, ImageFileInput }) => {
   const history = useHistory();
   const onLogout = () => {
     authService.logout();
@@ -34,6 +34,7 @@ const Main = ({ authService }) => {
       <Header onLogout={onLogout} />
       <section className={styles.mainBody}>
         <CardInput
+          ImageFileInput={ImageFileInput}
           cards={cards}
           updateCard={addOrUpdateCard}
           onAdd={addOrUpdateCard}
