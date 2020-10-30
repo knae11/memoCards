@@ -21,7 +21,6 @@ const Main = ({ authService, ImageFileInput, cardRepository }) => {
     const stopSync = cardRepository.syncCard(userId, (dbcards) =>
       setCards(dbcards)
     );
-    console.log(stopSync);
     return () => stopSync();
   }, [userId, cardRepository]);
 
@@ -29,7 +28,6 @@ const Main = ({ authService, ImageFileInput, cardRepository }) => {
     authService.onAuthChanged((user) => {
       if (user) {
         setUserId(user.uid);
-        console.log(user);
       } else {
         history.push("/");
       }

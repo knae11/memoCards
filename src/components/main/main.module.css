@@ -9,6 +9,7 @@
 .mainBody {
   display: flex;
   flex: 1;
+  overflow-y: auto;
 }
 
 @media screen and (max-width: 62rem) {
